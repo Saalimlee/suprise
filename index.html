@@ -43,26 +43,40 @@
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
 
     <script>
-        const firebaseConfig = {
+       const firebaseConfig = {
             apiKey: "AIzaSyDlSHCHsIhvQb3kF7QjY-GONnzM19SyuCc",
             authDomain: "collegememory-70aef.firebaseapp.com",
             projectId: "collegememory-70aef",
-            storageBucket: "collegememory-70aef.firebasestorage.app",
+            storageBucket: "collegememory-70aef.appspot.com", // Fixed this line
             messagingSenderId: "163486289119",
             appId: "1:163486289119:web:9d070a29c1a9f3dd906d6a"
         };
+        
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
-        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', { 'size': 'invisible' });
+        
+        // This handles the "I am not a robot" check invisibly
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+            'size': 'invisible'
+        });
 
         function sendOTP() {
-            const number = document.getElementById('phoneNumber').value;
-            auth.signInWithPhoneNumber(number, window.recaptchaVerifier).then((res) => {
-                window.confirmationResult = res;
-                document.getElementById('otp-section').style.display = 'block';
-                document.getElementById('sendBtn').style.display = 'none';
-                alert("OTP Sent!");
-            }).catch((err) => alert(err.message));
+            const number = document.getElementById('phoneNumber').value.trim();
+            
+            if(!number.startsWith('+91')) {
+                alert("Please enter the number starting with +91");
+                return;
+            }
+
+            auth.signInWithPhoneNumber(number, window.recaptchaVerifier)
+                .then((res) => {
+                    window.confirmationResult = res;
+                    document.getElementById('otp-section').style.display = 'block';
+                    document.getElementById('sendBtn').style.display = 'none';
+                    alert("OTP Sent! Please check your phone.");
+                }).catch((err) => {
+                    alert("Error: " + err.message);
+                });
         }
 
         function verifyCode() {
@@ -70,7 +84,7 @@
             confirmationResult.confirm(code).then(() => {
                 document.getElementById('auth-container').style.display = 'none';
                 document.getElementById('memory-wall').style.display = 'block';
-            }).catch(() => alert("Incorrect OTP!"));
+            }).catch(() => alert("Wrong OTP!"));
         }
     </script>
 </body>
