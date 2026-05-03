@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Surprise for You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #0a0a0a; color: white; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        #auth-container, #memory-wall { background: #141414; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.9); text-align: center; width: 90%; max-width: 400px; border: 1px solid #333; }
+        input { width: 100%; padding: 14px; margin: 15px 0; border-radius: 10px; border: 1px solid #444; background: #1d1d1d; color: white; box-sizing: border-box; font-size: 1rem; }
+        button { background: linear-gradient(45deg, #ff4757, #ff6b81); color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer; font-weight: 600; width: 100%; transition: 0.3s; }
+        .photo-card { background: white; color: #222; padding: 15px; border-radius: 10px; margin-top: 30px; transform: rotate(-2deg); box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+        .photo-card img { width: 100%; border-radius: 5px; }
+        .photo-card p { font-family: 'Dancing Script', cursive; font-size: 1.5rem; margin-top: 10px; }
+        #recaptcha-container { margin: 15px 0; }
+    </style>
+</head>
+<body>
+
+    <div id="auth-container">
+        <h2 style="color: #ff4757;">Hey Friend! 👋</h2>
+        <p>Enter your phone number (+91...) to unlock a memory.</p>
+        <div id="recaptcha-container"></div>
+        <input type="tel" id="phoneNumber" placeholder="+91 9876543210">
+        <button id="sendBtn" onclick="sendOTP()">Send Magic Code</button>
+        <div id="otp-section" style="display:none;">
+            <input type="text" id="verificationCode" placeholder="Enter 6-digit OTP">
+            <button onclick="verifyCode()">Unlock Memory</button>
+        </div>
+    </div>
+
+    <div id="memory-wall" style="display:none;">
+        <h1 style="color: #ff4757;">Surprise! 🎓</h1>
+        <div class="photo-card">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500" id="mem-img">
+            <p>"To the best group ever! Thanks for the laughs!"</p>
+        </div>
+        <button style="margin-top: 30px; background: #333;" onclick="location.reload()">Lock</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDlSHCHsIhvQb3kF7QjY-GONnzM19SyuCc",
+            authDomain: "collegememory-70aef.firebaseapp.com",
+            projectId: "collegememory-70aef",
+            storageBucket: "collegememory-70aef.firebasestorage.app",
+            messagingSenderId: "163486289119",
+            appId: "1:163486289119:web:9d070a29c1a9f3dd906d6a"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', { 'size': 'invisible' });
+
+        function sendOTP() {
+            const number = document.getElementById('phoneNumber').value;
+            auth.signInWithPhoneNumber(number, window.recaptchaVerifier).then((res) => {
+                window.confirmationResult = res;
+                document.getElementById('otp-section').style.display = 'block';
+                document.getElementById('sendBtn').style.display = 'none';
+                alert("OTP Sent!");
+            }).catch((err) => alert(err.message));
+        }
+
+        function verifyCode() {
+            const code = document.getElementById('verificationCode').value;
+            confirmationResult.confirm(code).then(() => {
+                document.getElementById('auth-container').style.display = 'none';
+                document.getElementById('memory-wall').style.display = 'block';
+            }).catch(() => alert("Incorrect OTP!"));
+        }
+    </script>
+</body>
+</html>
