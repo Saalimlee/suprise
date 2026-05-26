@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak, Asfiya Anjum ✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300&family=Montserrat:wght@100;300;400;600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
+        :root {
+            --velvet-emerald: #011410;
+            --liquid-gold: #e5b869;
+            --rose-gold: #f4a29e;
+            --champagne: #faf6ee;
+            --glass-sheet: rgba(250, 246, 238, 0.03);
+            --line-glow: rgba(229, 184, 105, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body, html {
+            background-color: var(--velvet-emerald);
+            color: var(--champagne);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        /* Ambient Performance Canvas Layer */
+        #festivalCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Global Structural Wrapper */
+        .universe-wrapper {
+            position: relative;
+            z-index: 10;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 1. CINEMATIC HERO GREETING */
+        .hero-festival {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .lunar-badge {
+            font-size: 0.8rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--rose-gold);
+            border-bottom: 1px solid var(--liquid-gold);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .main-greetings {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--champagne);
+            margin-bottom: 15px;
+            text-shadow: 0 0 40px rgba(229, 184, 105, 0.2);
+        }
+
+        .main-greetings span {
+            color: var(--liquid-gold);
+            font-style: italic;
+        }
+
+        .target-identity {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            letter-spacing: 4px;
+            color: var(--rose-gold);
+            margin-bottom: 35px;
+        }
+
+        /* 2. THE ULTIMATE SHAYARI EXHIBITION PANELS */
+        .section-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            text-align: center;
+            color: var(--liquid-gold);
+            margin: 100px 0 40px;
+            letter-spacing: 2px;
+        }
+
+        .poetry-deck {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            width: 100%;
+        }
+
+        .premium-card {
+            background: var(--glass-sheet);
+            border: 1px solid var(--line-glow);
+            border-radius: 24px;
+            padding: 50px 40px;
+            backdrop-filter: blur(15px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--liquid-gold);
+            box-shadow: 0 25px 50px rgba(1, 20, 16, 0.8), 0 0 30px rgba(229, 184, 105, 0.1);
+        }
+
+        .card-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--rose-gold);
+            display: block;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .urdu-render {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 2rem;
+            line-height: 5rem;
+            color: var(--champagne);
+            text-align: right;
+            direction: rtl;
+            margin-bottom: 30px;
+        }
+
+        .roman-render {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            opacity: 0.6;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+        }
+
+        .english-render {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 300;
+            color: #ced4da;
+            max-width: 750px;
+        }
+
+        /* 3. INTERACTIVE LAB: STONE TO FLOWER ALCHEMY */
+        .alchemy-vault {
+            background: radial-gradient(circle at center, #02211a, var(--velvet-emerald));
+            border: 1px dashed var(--liquid-gold);
+            border-radius: 32px;
+            padding: 60px 30px;
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .sacred-stone {
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle at 35% 35%, #1f2423, #0a0d0c);
+            border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+            margin: 35px auto;
+            cursor: pointer;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 5px 5px 15px rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.03);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sacred-stone span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            color: rgba(254, 246, 238, 0.3);
+            text-transform: uppercase;
+        }
+
+        /* 4. THE HEART TOUCHING EID LETTER WINDOW */
+        .parchment-frame {
+            border-left: 2px solid var(--liquid-gold);
+            border-right: 2px solid var(--liquid-gold);
+            background: linear-gradient(90deg, rgba(255,255,255,0.01), transparent, rgba(255,255,255,0.01));
+            padding: 60px 50px;
+            margin: 80px 0;
+            text-align: justify;
+        }
+
+        .letter-paragraph {
+            font-size: 1.1rem;
+            line-height: 2;
+            font-weight: 300;
+            color: #e9ecef;
+            margin-bottom: 25px;
+        }
+
+        /* 5. INTERACTIVE COMFORT ARCHIVE WIDGET */
+        .interactive-tab-box {
+            background: var(--glass-sheet);
+            border: 1px solid var(--line-glow);
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .tab-trigger-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .trigger-btn {
+            background: transparent;
+            border: 1px solid rgba(229, 184, 105, 0.3);
+            color: var(--champagne);
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .trigger-btn:hover, .trigger-btn.active {
+            background: var(--liquid-gold);
+            color: var(--velvet-emerald);
+            border-color: var(--liquid-gold);
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(229, 184, 105, 0.2);
+        }
+
+        .tab-content-output {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 1.9;
+            font-style: italic;
+            color: var(--rose-gold);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.4s ease;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            opacity: 0.4;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .main-greetings { font-size: 2.8rem; }
+            .target-identity { font-size: 1.6rem; }
+            .urdu-render { font-size: 1.5rem; line-height: 3.5rem; }
+            .premium-card { padding: 35px 20px; }
+            .parchment-frame { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ultra-Performance Motion Graphics Engine Layer -->
+    <canvas id="festivalCanvas"></canvas>
+
+    <div class="universe-wrapper">
+        
+        <!-- SECTION 1: THE MAJESTIC OPENING GREETING -->
+        <section class="hero-festival">
+            <div class="lunar-badge">Eid al-Adha Special Presentation</div>
+            <h1 class="main-greetings">Eid Mubarak To The<br><span>Most Beautiful Soul</span></h1>
+            <div class="target-identity">Asfiya Anjum</div>
+            <p style="max-width: 700px; font-weight: 200; font-size: 1.1rem; line-height: 1.9; opacity: 0.75;">
+                Distance might lock our paths in physical space, and we may connect purely through screens, but a true bond transcends miles. This interactive experience is built explicitly to bring you comfort, celebrate your unmatched identity, and wish you a blessed Bakrid.
+            </p>
+        </section>
+
+        <!-- SECTION 2: THE IMMERSIVE SHAYARI GALLERY -->
+        <section>
+            <div class="section-label">The Festive Verses</div>
+            
+            <div class="poetry-deck">
+                
+                <!-- Panel 1: Her Great Eyes -->
+                <div class="premium-card">
+                    <span class="card-icon" style="color:var(--liquid-gold); font-size:1.5rem; margin-bottom:15px; display:block;">✦</span>
+                    <span class="card-number">Verse I — The Magic of Your Gaze</span>
+                    <div class="urdu-render">عید کا چاند تو بس ایک بہانہ ہے دنیا کے لیے<br>حسین تو تیری آنکھیں ہیں جو کائنات کا سحر ہیں</div>
+                    <div class="roman-render">Eid ka chaand to bas ek bahana hai duniya ke liye,<br>Haseen to teri aankhein hain jo kaainaat ka sehar hain.</div>
+                    <div class="english-render">
+                        The entire world gazes at the night sky looking for the festive crescent moon, but they look in the wrong direction. The greatest, most magnetic wonder in this world lives quietly within your eyes. They hold a profound, sparkling calm that acts as an immediate sanctuary.
+                    </div>
+                </div>
+
+                <!-- Panel 2: Her Soft Heart -->
+                <div class="premium-card">
+                    <span class="card-icon" style="color:var(--liquid-gold); font-size:1.5rem; margin-bottom:15px; display:block;">✦</span>
+                    <span class="card-number">Verse II — The Velvet Core</span>
+                    <div class="urdu-render">تیری نرم دلی ہی اس دنیا کا سب سے قیمتی نور ہے<br>آصفیہ، تم سادگی میں بھی سب سے خاص ہو</div>
+                    <div class="roman-render">Teri narm-dili hi is duniya ka sab se qeemti noor hai,<br>Asfiya, tum saadgi mein bhi sab se khaas ho.</div>
+                    <div class="english-render">
+                        In a world that often grows distant and uncaring, the genuine softness and raw empathy of your heart make you a living masterpiece. Your capacity to listen and bring peace to a conversation is a light that stands entirely unmatched.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE HIGH-END ALCHEMY EXPERIMENT (STONE TO FLOWER) -->
+        <section>
+            <div class="section-label">The Miracle Matrix</div>
+            
+            <div class="alchemy-vault">
+                <p style="font-weight: 200; font-size: 1.05rem; opacity: 0.8; margin-bottom: 25px; max-width: 600px; margin: 0 auto;">
+                    Life can often feel rigid and cold, much like a barren stone monolith. Move your cursor or tap the element below to witness how your identity commands the physical world.
+                </p>
+                
+                <div class="sacred-stone" id="alchemyStone">
+                    <span id="stoneTxt">Touch Core</span>
+                </div>
+                
+                <h3 id="vaultStatus" style="font-family:'Cormorant Garamond', serif; color: var(--liquid-gold); margin-top: 25px; font-weight: 400; font-size: 1.5rem; letter-spacing: 1px;">A Rigid, Inanimate Stone Layer</h3>
+                
+                <div class="premium-card" style="border:none; background:transparent; padding:30px 0 0 0;">
+                    <div class="urdu-render" style="color: var(--rose-gold); text-align:center;">پتھر پہ بھی لکھ دیں جو نام تمہارا آصفیہ انجم<br>تو خدا کی قسم، وہ سنگِ مرمر بھی گلاب اگلنے لگے</div>
+                    <div class="roman-render" style="text-align:center;">Patthar pe bhi likh dein jo naam tumhara Asfiya Anjum,<br>To Khuda ki qasam, woh sang-e-marmar bhi gulaab ugalne lage.</div>
+                    <div class="english-render" style="margin: 0 auto; text-align:center;">
+                        If your name were etched upon the coldest, most uncompromising stone in existence, the sheer warmth of who you are would alter its molecules. The rock would lose its hardness, blooming outward into a beautiful cascade of soft roses.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: THE DEEP EMOTIONAL LETTERS PAGE -->
+        <section>
+            <div class="section-label">A Dedicated Scroll</div>
+            
+            <div class="parchment-frame">
+                <p class="letter-paragraph"><strong>Dear Asfiya Anjum,</strong></p>
+                <p class="letter-paragraph">
+                    I chose to design this advanced, permanent experience for you because simple text messages sent in regular chat panels disappear as time moves forward. I wanted you to possess an unbroken place on the live internet—a permanent record showing that our online friendship carries real weight. Even though we have never met in person, your presence has consistently been a profound comfort to me.
+                </p>
+                <p class="letter-paragraph">
+                    Sometimes, the physical world fails to notice the rare beauty of a gentle soul. Yet, across screens and time zones, you show up with the softest heart and the clearest empathy. You are my absolute best friend. Whenever you find yourself feeling down, overwhelmed, or questioning your value, I want you to open this link.
+                </p>
+                <p class="letter-paragraph" style="color: var(--liquid-gold); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">
+                    Your name means 'The Pure Star,' and that is precisely how you illuminate my digital sky. Have an absolutely beautiful and blessed Bakrid. I am endlessly glad to have you in my life.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 5: THE CELEBRATION COMPANION SYSTEM -->
+        <section>
+            <div class="section-label">The Comfort Companion</div>
+            
+            <div class="interactive-tab-box">
+                <p style="font-weight: 200; margin-bottom: 30px; opacity: 0.8; font-size: 0.95rem; letter-spacing: 0.5px;">
+                    Select an option below to pull a customized, deep-hearted reassurance greeting for this festive season:
+                </p>
+                
+                <div class="tab-trigger-row">
+                    <button class="trigger-btn active" onclick="activateTab('eid', this)">Eid Blessing</button>
+                    <button class="trigger-btn" onclick="activateTab('beauty', this)">On Your Beauty</button>
+                    <button class="trigger-btn" onclick="activateTab('comfort', this)">When Missing a Friend</button>
+                </div>
+                
+                <div class="tab-content-output" id="tabConsole">
+                    "May this Bakrid fill your days with absolute serenity. You deserve the exact soft tranquility that you so effortlessly give to everyone else around you, Asfiya Anjum."
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>System Engineered Exclusively for Asfiya Anjum.</p>
+            <p style="margin-top: 10px; opacity: 0.4; font-size: 0.7rem;">Happy Bakrid 2026 | An Everlasting Token of Friendship</p>
+        </footer>
+    </div>
+
+    <!-- HIGH-DENSITY GRAPHICS ENVIRONMENT SCRIPTS -->
+    <script>
+        /* 1. LUNAR COSMIC PARTICLE VECTOR SYSTEMS */
+        const canvas = document.getElementById('festivalCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        let mouse = { x: null, y: null, active: false };
+        let activePetals = false;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            mouse.active = true;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+            mouse.active = true;
+        });
+
+        class CelestialStar {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.originX = this.x;
+                this.originY = this.y;
+                this.size = Math.random() * 1.5 + 0.4;
+                this.speed = Math.random() * 25 + 15;
+                this.alpha = Math.random() * 0.6 + 0.2;
+                this.twinkle = Math.random() * 0.008 + 0.003;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(250, 246, 252, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                this.alpha += this.twinkle;
+                if(this.alpha > 0.85 || this.alpha < 0.15) this.twinkle *= -1;
+
+                if (mouse.active) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.hypot(dx, dy);
+                    if (distance < 160) {
+                        let force = (160 - distance) / 160;
+                        this.x += (dx / distance) * force * 5;
+                        this.y += (dy / distance) * force * 5;
+                        return;
+                    }
+                }
+                this.x += (this.originX - this.x) / this.speed;
+                this.y += (this.originY - this.y) / this.speed;
+            }
+        }
+
+        class RisingRosePetal {
+            constructor(spawnX, spawnY) {
+                this.x = spawnX;
+                this.y = spawnY + window.scrollY;
+                this.velX = Math.random() * 6 - 3;
+                this.velY = -(Math.random() * 4 + 2);
+                this.size = Math.random() * 5 + 4;
+                this.alpha = 1;
+                this.rotation = Math.random() * 360;
+                this.rotVel = Math.random() * 2 - 1;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y - window.scrollY);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = `rgba(244, 162, 158, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.ellipse(0, 0, this.size, this.size / 1.5, 0, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            update() {
+                this.x += this.velX;
+                this.y += this.velY;
+                this.rotation += this.rotVel;
+                this.alpha -= 0.015;
+
+                if (this.alpha <= 0) {
+                    const idx = petalPool.indexOf(this);
+                    if (idx > -1) petalPool.splice(idx, 1);
+                }
+            }
+        }
+
+        const systemStars = [];
+        const petalPool = [];
+
+        for(let i=0; i<140; i++) {
+            systemStars.push(new CelestialStar());
+        }
+
+        function engineLoop() {
+            ctx.clearRect(0, 0, width, height);
+            
+            systemStars.forEach(star => {
+                star.update();
+                star.draw();
+            });
+
+            if (activePetals && Math.random() > 0.3) {
+                const boundary = stoneNode.getBoundingClientRect();
+                petalPool.push(new RisingRosePetal(boundary.left + boundary.width / 2, boundary.top + boundary.height / 2));
+            }
+
+            petalPool.forEach(petal => {
+                petal.update();
+                petal.draw();
+            });
+
+            requestAnimationFrame(engineLoop);
+        }
+        engineLoop();
+
+        /* 2. THE STONE TO FLOWER DYNAMIC CONVERSION ALGORITHM */
+        const stoneNode = document.getElementById('alchemyStone');
+        const statusHeader = document.getElementById('vaultStatus');
+        const coreTxt = document.getElementById('stoneTxt');
+
+        stoneNode.addEventListener('mouseenter', () => {
+            activePetals = true;
+            stoneNode.style.background = "radial-gradient(circle, #7e22ce 0%, #1e1b4b 70%, #020617 100%)";
+            stoneNode.style.boxShadow = "0 0 40px rgba(244, 162, 158, 0.4)";
+            coreTxt.textContent = "ASFIYA";
+            coreTxt.style.color = "var(--rose-gold)";
+            coreTxt.style.textShadow = "0 0 10px var(--rose-gold)";
+            statusHeader.innerHTML = "✨ Miracle Realized: The Stone Blooms Into Fresh Roses! ✨";
+            statusHeader.style.color = "var(--rose-gold)";
+        });
+
+        stoneNode.addEventListener('mouseleave', () => {
+            activePetals = false;
+            stoneNode.style.background = "radial-gradient(circle at 35% 35%, #1f2423, #0a0d0c)";
+            stoneNode.style.boxShadow = "0 25px 50px rgba(0,0,0,0.7)";
+            coreTxt.textContent = "Touch Core";
+            coreTxt.style.color = "rgba(254, 246, 238, 0.3)";
+            coreTxt.style.textShadow = "none";
+            statusHeader.textContent = "A Rigid, Inanimate Stone Layer";
+            statusHeader.style.color = "var(--liquid-gold)";
+        });
+
+        /* 3. INTERACTIVE MOOD CONSOLE SELECTOR */
+        const interactiveDatabase = {
+            eid: "May this Bakrid fill your days with absolute serenity. You deserve the exact soft tranquility that you so effortlessly give to everyone else around you, Asfiya Anjum. Eid Mubarak!",
+            beauty: "Your beauty is not standard or common. It is a genuine mix of an incredibly soft heart and eyes that hold the finest poetry the world could ever hope to write. You are genuinely stunning.",
+            comfort: "Never let the physical space make you feel isolated. True friends don\'t care about coordinate points. Our chats hold a safer, truer home than local geography ever could. I am always right here rooting for you."
+        };
+
+        function activateTab(dataKey, buttonElement) {
+            const displayBox = document.getElementById('tabConsole');
+            document.querySelectorAll('.trigger-btn').forEach(btn => btn.classList.remove('active'));
+            buttonElement.classList.add('active');
+            
+            displayBox.style.opacity = '0';
+            setTimeout(() => {
+                displayBox.textContent = `"${interactiveDatabase[dataKey]}"`;
+                displayBox.style.opacity = '1';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
